@@ -3,7 +3,7 @@ A single entry point movie website using PHP MVC structure and OOP
 
 Used PHP for user authentication, and twig as the front end template
 
-Used Bootstrap 4/CSS3.0 to develop front end template including animated main page and movie detail page
+Used Bootstrap 4/CSS 3.0 to develop front end template including animated main page and movie detail page
 
 Updated front-end page contents such as ratings, generated comments and showed on page dynamically
 
