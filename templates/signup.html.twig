@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% apply inline_css(source("/style/signup.css")) %}
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Oswald|Patua+One&display=swap" rel="stylesheet">
+  <title>Login</title>
+</head>
+<body>
+  <!-- Part 1 Header navbar -->
+  {{ include('/common/header.html.twig')|inline_css(source("/style/movie_header.css")) }}
+
+  <!-- Part 2 Login form -->
+  {% include '/signup_page/signup_form.html.twig' %}
+
+  <!-- Part 3 Footer -->
+  {{ include('/common/footer.html.twig')|inline_css(source("/style/footer.css")) }}
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- Customized js -->
+  {% include '/signup_page/signup_js_logic.html.twig' %}  
+</body>
+</html>
+{% endapply %}

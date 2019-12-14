@@ -1,0 +1,24 @@
+<div class="container loginContainer">
+  <form action="signupToDB" method="post">
+    <div class="imgcontainer">
+      <img src="https://spotlightmedia.com/wp-content/uploads/2015/07/ClientLogincol2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="form">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <button class="loginBtn" type="submit">Sign Up</button>
+    </div>
+
+    <div class="bottom" style="background-color:#f1f1f1">
+      <button class="cancelbtn loginBtn" type="button">Cancel</button>
+      {% if signup_status %}
+        <span class="login">Sign up successfully! Want to <a href="/movie/login/process">log in?</a></span>
+      {% endif %}
+    </div>
+  </form>
+</div>

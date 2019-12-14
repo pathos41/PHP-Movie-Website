@@ -1,0 +1,19 @@
+/*Navbar*/
+.navbar-brand{
+  font-family: 'Patua One', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+}
+
+.navbar{
+  transition: background-color 300ms ease-in-out;
+}
+
+.nav-item{
+  cursor: pointer;
+}
+
+.nav-bgd{
+  background: #000639; 
+}

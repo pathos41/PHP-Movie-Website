@@ -1,0 +1,49 @@
+<script type="text/javascript">
+  var nav = $(".navbar");
+  var scrollDown = $(".mySlides");
+
+  // Navbar color effect
+  $(document).scroll(function() {
+    nav.toggleClass('scrolled', $(this).scrollTop() > scrollDown.height());
+  });
+  $("#search-btn").on("click", function(){
+    var searchItem = $("#search-box").val();
+    // Get the search result
+    $(document).ready(() => {
+      url = `/movie/search/search/${searchItem}`;
+      $(location).attr("href", url);
+    });
+  });
+
+  // Login button
+  $(".fa-user").on("click", function(){
+    $(document).ready(() => {
+      url = `/movie/login/process`;
+      $(location).attr("href", url);
+    });
+  });
+
+  // Logout button
+  $(".fa-sign-out-alt").on("click", function(){
+    $(document).ready(() => {
+      url = `/movie/login/logout`;
+      $(location).attr("href", url);
+    });
+  });
+
+  // Automatic slide show
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = $(".mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+  }
+</script>

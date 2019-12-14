@@ -1,0 +1,7 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "symfony/asset": "^5.0",
+        "twig/cssinliner-extra": "^3.0"
+    }
+}

@@ -1,0 +1,50 @@
+<div class="container-fluid cate-menu">
+  <div class="row mt-3 mx-4 grey-bottom">
+    {% for id, category in categories %}
+      <div class="pb-2 pl-2 pr-5
+      {# Only the selected tag is highlighted #}
+        {% if id == cid %}
+          active
+        {% endif %}
+      ">
+        <a class="color-text" href="/movie/genre/get/{{ id }}">{{ category }}</a>
+      </div>
+    {% endfor %}
+  </div>
+  {% if not movies %}
+    <div class="ml-5 mt-3 card-text">No movie with such name can be found, please try again!</div>
+  {% endif %}
+  <div class="row mx-4 px-4 mt-4">
+    {% for movie in movies %}
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3 px-4">
+        <div class="card">
+          <a href="/movie/movie/get/{{ movie.id }}">
+            <img src="{{ movie.widget_url }}" class="card-img-top w-100" alt="...">
+          </a>
+          <div class="card-body">
+            <div class="float-right p-1 rounded theme-text">
+              {{ movie.average_score | number_format(1)}}
+            </div>
+            <a href="/movie/movie/get/{{ movie.id }}">
+              <h5 class="card-title mb-4">{{ movie.name }}</h5>
+            </a>
+            {# Get the premiere date for the movies #}
+            <div id="movie-date" class="float-right">
+              {{ movie.date|slice(0, 4) }}
+            </div>
+            <div class="card-text text-secondary">
+              {% set genres = movie.genre|split(",") %}
+              {# {% set temp = [] %} #}
+              {% for ge in genres %}
+                <!-- Array index starts at 0 while database id starts at 1 -->
+                <a class="mr-2" href="/movie/genre/get/{{ ge }}">{{ categories[ge] }}</a>
+                {# {% set temp = temp|merge([categories[ge - 1]]) %} #}
+              {% endfor %}
+              {# {{ temp|join(" | ") }} #}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

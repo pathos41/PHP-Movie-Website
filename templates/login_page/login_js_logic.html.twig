@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  $(".cancelbtn").on("click", function(){
+    $(document).ready(() => {
+      url = `/movie`;
+      $(location).attr("href", url);
+    });
+  });
+
+  $("#search-btn").on("click", function(){
+    var searchItem = $("#search-box").val();
+    // Get the search result
+    $(document).ready(() => {
+      url = `/movie/search/search/${searchItem}`;
+      $(location).attr("href", url);
+    });
+  });
+
+  $(".fa-user").on("click", function(){
+    $(document).ready(() => {
+      url = `/movie/login/process`;
+      $(location).attr("href", url);
+    });
+  });
+
+  $(".fa-sign-out-alt").on("click", function(){
+    $(document).ready(() => {
+      url = `/movie/login/logout`;
+      $(location).attr("href", url);
+    });
+  });
+</script>

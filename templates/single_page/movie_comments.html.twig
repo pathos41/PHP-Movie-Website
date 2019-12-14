@@ -1,0 +1,47 @@
+<div class="container-fluid cate-menu mb-3">
+  <!-- Part 4.1 Title -->
+  <div class="row mt-3 mx-4 text-secondary grey-bottom">
+    <div class="col-1 pb-2 active">
+      Comments
+    </div>
+  </div>
+
+  <!-- Part 4.2 Input -->
+  <div class="row">
+    <div class="form-inline my-5 mx-auto align-items-end">
+      <textarea id="comment_input" class="comment-text rounded-0 p-2" rows="5" placeholder="Share some thoughts..." name="newComment"></textarea>
+      <button id="comment_submit" class="text-white share-btn btn ml-3 px-4 rounded-0" data-id="{{ movie.id }}">
+        Share
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4"></div>
+    <div id="result-info"></div>
+  </div>
+  <!-- Part 4.3 Comment List -->
+  <div class="container theme-color-text" id="all-comments">
+    {% if comments == false %}
+      <div class="row my-4">
+        <div class="col-1"></div>
+        <div class="col-11 text-justify">No comment for this movie yet.</div>
+      </div>
+    {% else %}
+      {% for comment in comments %}
+        <div class="row my-4">
+          <div class="col-1">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <div class="col-11 text-justify">
+            <p class="float-right">{{ comment.date }}</p>
+            <h4>{{ comment.username }}</h4>
+            <p>
+              {{ comment.content }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<!doctype html>
+{% apply inline_css(source("/style/index.css")) %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="
+    anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Oswald|Patua+One&display=swap" rel="stylesheet">
+    <style type="text/css">
+      /* Fading animation */
+      .fadeAnimation {
+        -webkit-animation-name: fadeAnimation;
+        -webkit-animation-duration: 1.5s;
+        -webkit-animation-fill-mode: forwards;
+        animation-name: fadeAnimation;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards; 
+      }
+
+      @-webkit-keyframes fadeAnimation {
+        from { opacity: 0.2; }
+        to { opacity: 1; }
+      }
+
+      @keyframes fadeAnimation {
+        from { opacity: 0.2; }
+        to { opacity: 1; }
+      }
+
+      a:hover{
+        text-decoration: none;
+        cursor: pointer;
+      } 
+
+      .cate-menu .active{
+        color: #000639;
+        border-bottom: 2px solid #000639;
+        /*line-height: 2.4rem;*/
+      } 
+
+      .scrolled{
+        background: #000639 !important;
+        box-shadow: 0 10px 10px -10px rgba(33,43,53,0.1);
+      }
+    </style>
+    <title>Movie Main Page</title>
+  </head>
+  <body>
+    <!-- Part 1 Header navbar -->
+    {{ include('/common/header.html.twig')|inline_css(source("/style/header.css")) }}
+    
+    <!-- Part 2 Banner Slideshow-->
+    {% include '/main_page/slideshow.html.twig' %}
+
+    <!-- Part 3 Movie List -->
+    {% include '/main_page/movie_list.html.twig' %}
+
+    <!-- Part 4 Footer -->
+    {{ include('/common/footer.html.twig')|inline_css(source("/style/footer.css")) }}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Customized js -->
+    {% include '/main_page/js_logic.html.twig' %}
+  </body>
+</html>
+{% endapply %}

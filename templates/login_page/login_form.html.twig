@@ -1,0 +1,29 @@
+<div class="container loginContainer">
+  <form action="process" method="post">
+    <div class="imgcontainer">
+      <img src="https://spotlightmedia.com/wp-content/uploads/2015/07/ClientLogincol2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="form">
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <button class="loginBtn" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <span class="float-right">Don't have an account yet? <a href="/movie/login/signup">Sign up</a></span>
+    </div>
+
+    <div class="bottom" style="background-color:#f1f1f1">
+      <button class="loginBtn cancelbtn" type="button">Cancel</button>
+      {% if not login_status %}
+        <span class="failure-msg">Failed to log in, please try again!</span>
+      {% endif %}
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>

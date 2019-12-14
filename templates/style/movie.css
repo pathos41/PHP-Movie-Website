@@ -1,0 +1,77 @@
+body{
+  background: #eee;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.score-box{
+  color: #000639;
+  border: 2px solid red;
+  font-size: 1.5rem;
+}
+
+.rating-box{
+  color: #000639;
+  border: 2px solid red;
+  font-size: 0;
+}
+
+.rating{
+  font-size: 1.5rem;
+}
+
+.grey-bottom{
+  border-bottom: 1px solid #ccc;
+}
+
+.cate-menu .active{
+  color: #000639;
+  border-bottom: 2px solid #000639;
+  /*line-height: 2.4rem;*/
+}
+
+.iframe{
+  font-size: 0;
+}
+
+.part-2-2{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  margin-top: 77.5px;
+}
+
+textarea{
+  width: 50vw;
+}
+
+.movie-name{
+  font-family: 'Patua One', cursive;
+  font-size: 2rem;
+}
+
+.movie-desc{
+  font-family: 'Patua One', cursive;
+  font-size: 1.2rem;
+}
+
+.card-text{
+  font-family: 'Patua One', cursive;
+  font-size: 1rem;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+.theme-color-text{
+  color: #000639;
+}
+
+.share-btn{
+  background: #000639;
+}
+
+.comment-text{
+  border: 1px solid #000639;
+}

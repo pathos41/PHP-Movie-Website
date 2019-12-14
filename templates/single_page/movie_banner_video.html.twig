@@ -1,0 +1,38 @@
+<div class="container-fluid p-0 bg-white part-2-2">
+  <div class="row">
+    <div class="col-8 iframe">
+      <iframe width="100%" height="600px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="{{ movie.youtube_url }}"></iframe>
+    </div>
+
+    <div class="col-4">
+      <div class="pt-5 px-4">
+        <div class="float-right p-1 rounded score-box mr-4">
+          {{ movie.average_score | number_format(1)}}
+        </div>
+        <h2 class="movie-name mb-5">{{ movie.name }}</h2>
+        <p><span class="card-text">Director:</span> {{ movie.director }}</p>
+        <p><span class="card-text">Staring:</span> {{ movie.stars }}</p>
+        <p><span class="card-text">Premiere:</span> {{ movie.date|slice(0, 10) }}</p>
+        <p><span class="card-text">Box Office:</span> {{ movie.box_office }}</p>
+        <p class="card-text">Genre: 
+          {% set genres = movie.genre|split(",") %}
+          {# {% set temp = [] %} #}
+          {% for ge in genres %}
+            <!-- Array index starts at 0 while database id starts at 1 -->
+            <a class="mr-2" href="/movie/genre/get/{{ ge }}">{{ categories[ge] }}</a>
+            {# {% set temp = temp|merge([categories[ge - 1]]) %} #}
+          {% endfor %}
+          {# {{ temp|join(" | ") }} #}
+        </p>
+        <p class="card-text">Wanna leave a rating? Rate here:</p>
+        <div class="float-left p-1 rounded rating-box mr-4">
+          <i class="rating rating1 far fa-star" data-score="1" data-id="{{ movie.id }}"></i>
+          <i class="rating rating2 far fa-star" data-score="2" data-id="{{ movie.id }}"></i>
+          <i class="rating rating3 far fa-star" data-score="3" data-id="{{ movie.id }}"></i>
+          <i class="rating rating4 far fa-star" data-score="4" data-id="{{ movie.id }}"></i>
+          <i class="rating rating5 far fa-star" data-score="5" data-id="{{ movie.id }}"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

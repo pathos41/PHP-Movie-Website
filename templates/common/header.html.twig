@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg nav-bgd fixed-top">
+  <a class="navbar-brand text-white" href="/movie">Cinematic Universe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto mr-2">
+      <li>
+        <div class="container part-1-2 d-flex justify-content-center">
+          <div class="form-inline my-2 my-lg-0">
+            <input id="search-box" class="form-control rounded-0 border-white" type="search" placeholder="Search..." aria-label="Search" name="searchBox">
+            {# <a href="/movie/search/search/black"> #}
+              <button id="search-btn" class="btn my-2 my-sm-0 text-white rounded-0 nav-bgd" name="searchBtn">  
+                <i class="fas fa-search"></i>
+              </button>
+            {# </a> #}
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="/movie">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/movie/ranking/hot">Hottest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/movie/ranking/new">Newest</a>
+      </li>
+      <li class="nav-item ml-2">
+        <a class="nav-link text-white pr-1" href="#">
+          <i class="fas fa-user"></i>
+        </a>
+      </li>
+      {% if login_status %}
+        <li class="nav-item">
+          <span class="nav-link text-white px-0">{{ username }}</span>
+        </li>
+      {% endif %}
+      <li class="nav-item ml-2">
+        <a class="nav-link text-white pr-1" href="#">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
