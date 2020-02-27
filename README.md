@@ -1,4 +1,6 @@
 # PHP Movie Website
+Visit the website at <a href="https://cinematic-universe.herokuapp.com/">Cinematic Universe</a>.
+
 A single entry point movie website using PHP MVC structure and OOP.
 <img src="img/home_page.png">
 The list of movies, sorted by premiere time by default.
